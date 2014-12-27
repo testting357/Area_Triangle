@@ -3,18 +3,6 @@
 <head>
 <title>Calculator</title>
 <style>
-h3{
-   
-	margin-left:60px;
-	margin-right:60px;
-	font-size:30px;
-	color: red;
-	border-radius:10px;
-	text-align: center;
-	margin-bottom:0px;
-	background-color:#099;
-}
-
 	
 table{
 	font-size:25px;
@@ -22,7 +10,7 @@ table{
 	border-radius:10px;
 	PADDING:8px;
 	margin:5px;
-	color:red;
+	color:white;
 	background-color:#450;
 	margin-bottom:1%;
 }
@@ -63,13 +51,18 @@ input.but2{
 	background-color:yellow;
 	padding:5px;	
 }
-td {
+td#main {
 margin-left:0 px;
 font-size:25px;
 background:#C0A545;
 color:blue;
 }
-
+td#center {
+margin-left:0 px;
+font-size:25px;
+background:#F5E8E2;
+color:blue;
+}
 </style>
 <script type="text/javascript" >
 function show(shown, hidden) {
@@ -84,15 +77,15 @@ function area(ish)
 	t3=parseFloat(ish.t3.value);
 	if(ish.t1.value=="")
 		{
-			ish.t1.value="Enter the sides 1";
+			ish.t1.value="Enter First side";
 		}
 	else if(ish.t2.value=="")
 		{
-			ish.t2.value="Enter the sides 2";
+			ish.t2.value="Enter Second side";
 		}
 	else if(ish.t3.value=="")
 		{
-			ish.t3.value="Enter the sides 3";
+			ish.t3.value="Enter Third side";
 		}
 	else 
 		if(((t1+t2) <= t3) ||((t2+t3)<= t1 )||( (t1+t3)<=t2))
@@ -165,18 +158,18 @@ window.onload = function() {showHide('a1','one');}
 
 <body >
 <table>
-<tr><td colspan=2><br><center><input type="button" style="cursor:pointer" class="but4"  onclick="showHide('a1','one')" value="Area of Traingle"/>
+<tr><td colspan=2 id="main"><br><center><input type="button" style="cursor:pointer" class="but4"  onclick="showHide('a1','one')" value="Area of Traingle"/>
 	<input type="button" style="cursor:pointer" class="but4" onclick="showHide('a2','one')" value="Conversion of Area"/>
 	<br></center></td>
 </tr>
 
-<tr><td>	
+<tr><td id="center">	
 	<div id="a1" class="red one">
 	  <form name="ish">
 			<table ><tr>
-			<td>Side1:</td><td><input class="text1" type="number"  name="t1" value="Enter Side 1" onclick="clear1(ish);"/><tr>
-			<td>Side2:</td><td><input class="text1" type="number" name="t2" value="Enter Side 2" onclick="clear2(ish);"/></><tr>
-			<td>Side3:</td><td><input class="text1" type="number" name="t3" value="Enter Side 3" onclick="clear3(ish);"/></><tr>
+			<td>Side1:</td><td><input class="text1" type="number"  name="t1" value="Enter First Side" onclick="clear1(ish);"/><tr>
+			<td>Side2:</td><td><input class="text1" type="number" name="t2" value="Enter Second Side" onclick="clear2(ish);"/></><tr>
+			<td>Side3:</td><td><input class="text1" type="number" name="t3" value="Enter Third Side" onclick="clear3(ish);"/></><tr>
 			<td><input class="but2" style="cursor:pointer" type="reset" value="Reset"/></td>
 			<td><input class="but1" style="cursor:pointer" type="button" value=" Calculate " onclick="area(ish);"/><tr>
 			<td>Area :</td><td><input class="text1" type="text" name="t4" ></input></td></tr>
@@ -198,7 +191,7 @@ window.onload = function() {showHide('a1','one');}
 		</form>
 	   </div>
 	</td></tr>
-	<tr><td><center>©Ishfaq Dar<center></td></tr>
+	<tr><td id="main"><center>Ishfaq Dar<center></td></tr>
 	</table>
 	</body>
 </html>
