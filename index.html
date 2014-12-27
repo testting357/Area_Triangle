@@ -75,7 +75,7 @@ color:blue;
 }
 #wrapper{
 	text-align:center;
-	float:center;
+	float:left;
 	margin: auto;
 	max-width: 380px;
 	width: 99%;
@@ -236,7 +236,7 @@ window.onload = function() {showHide('a1','one');}
 //--></script>
 	</head>
 
-<center><body >
+<body >
 	<div id="wrapper">
 	<div>
 		<input type="button" style="cursor:pointer" class="but4"  onclick="showHide('a1','one')" value="AREA"/>
@@ -245,34 +245,33 @@ window.onload = function() {showHide('a1','one');}
 	<div id="a1" class="red one">
 	  <form name="ish">
 			<table ><tr>
-			<td>Side1:</td><td><input class="text1" type="text"  name="t1" value="Enter Side 1" onclick="clear1(ish);"/><tr>
-			<td>Side2:</td><td><input class="text1" type="text" name="t2" value="Enter Side 2" onclick="clear2(ish);"/></><tr>
-			<td>Side3:</td><td><input class="text1" type="text" name="t3" value="Enter Side 3" onclick="clear3(ish);"/></><tr>
+			<td>Side1:</td><td><input class="text1" type="number"  name="t1" value="Enter Side 1" onclick="clear1(ish);"/><tr>
+			<td>Side2:</td><td><input class="text1" type="number" name="t2" value="Enter Side 2" onclick="clear2(ish);"/></><tr>
+			<td>Side3:</td><td><input class="text1" type="number" name="t3" value="Enter Side 3" onclick="clear3(ish);"/></><tr>
 			<td><input class="but2" style="cursor:pointer" type="reset" value="Reset"/></td>
 			<td><input class="but1" style="cursor:pointer" type="button" value=" Calculate " onclick="area(ish);"/><tr>
-			<td>Area :</td><td><output name="t4" ></output></td></tr>
+			<td>Area :</td><td><input class="text1" type="text" name="t4" ></input></td></tr>
 			</table>
 		</form>
 	   </div>
 	   <div id="a2" class="one">
 	   <form name="ish1">
 			<table ><tr>
-			<td>Area :</td><td><input class="text1" type="text" name="t5" value="Enter Area"onclick="clear4(ish1);"/></td><tr>
+			<td>Area :</td><td><input class="text1" type="number" name="t5" value="Enter Area"onclick="clear4(ish1);"/></td><tr>
 			<td><input class="but2" style="cursor:pointer" type="reset" value="Reset"/></td>
 			<td><input class="but1" style="cursor:pointer" type="button" value=" Compute " onclick="compute(ish1);"/><tr>
-			<td>Marls:</td><td><input type=text class="text1" name="t6" ></output></td></tr>
+			<td>Marls:</td><td><input type="number" class="text1" name="t6" ></output></td></tr>
 			<td colspan="2"><center><input class="but3" type="button" style="cursor:pointer" value=" Calculate " onclick="convert(ish1);"/><center><tr>
-			<td>Knals:</td><td><output name="t7" ></output></td></tr>
-			<td>Marls:</td><td><output name="t8" ></output></td></tr>
-			<td>Feets:</td><td><output name="t9" ></output></td></tr>
+			<td>Knals:</td><td><input class="text1" type="number" name="t7" ></output></td></tr>
+			<td>Marls:</td><td><input class="text1" type="number" name="t8" ></output></td></tr>
+			<td>Feets:</td><td><input class="text1" type="number" name="t9" ></output></td></tr>
 			</table>
 		</form>
 	   </div>
 	<div class="clear"></div>
-	<footer><center>©Calculator<center></footer>
+	<footer><center>©Ishfaq Dar<center></footer>
 	</div>
 	
 	
 </body>
 </html>
-
