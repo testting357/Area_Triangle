@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Calculator</title>
+		<style>
+@charset "utf-8";
+h3{
+   
+	margin-left:60px;
+	margin-right:60px;
+	font-size:30px;
+	color: red;
+	border-radius:10px;
+	text-align: center;
+	margin-bottom:0px;
+	background-color:#099;
+}
+p.h{
+    float: right;
+	
+	}
+	
+table{
+	font-size:25px;
+	border:10px;
+	PADDING:10px;
+	margin:10px;
+	color:red;
+	background-color:#450;
+	margin-bottom:1%;
+}
+input.text1{
+	font-size:90%;
+	color:green;
+}
+input.but1{
+	border-radius:10px;
+	font-size:18px;
+	color:red;
+	background-color:green;
+	padding:5px;
+	width:65%;
+	
+}
+input.but4{
+	border-radius:10px;
+	font-size:18px;
+	color:blue;
+	background-color:#46AAA;
+	padding:5px;
+		
+}
+input.but3{
+	border-radius:10px;
+	font-size:18px;
+	color:red;
+	background-color:blue;
+	padding:5px;
+	width:90%;
+	
+}
+input.but2{
+	border-radius:10px;
+	font-size:18px;
+	color:green;
+	background-color:yellow;
+	padding:5px;	
+}
+td {
+font-size:25px;
+background:pink;
+color:blue;
+}
+#wrapper{
+	text-align:center;
+	float:center;
+	margin: auto;
+	max-width: 380px;
+	width: 99%;
+	padding: 1%;
+	border-radius: 10px;
+	background-attachment: fixed;
+	background-color: #33CC66;
+	background-position:center;
+	margin-bottom:1%;	
+}
+header{
+	padding:0px;
+	text-align:center;
+}
+nav{ text-align:center;
+	margin-left:25%;
+	margin-right:28%;
+	border-radius:10px;
+	
+}
+nav ul{
+	font-weight:bold;
+	text-align:center;
+	list-style:none;
+    margin-left:0%;
+    padding:0;
+}
+
+nav li a{
+	color:blue;
+	border-radius:10px;
+	background:#099;
+	display:block;
+	float:left;
+	padding:10px;
+	text-decoration:none;
+}
+nav a:hover, nav li.active a
+{
+	background-color: #639;
+	color: #C00;
+	border-radius: 10px;
+}
+.clear{
+	clear:both;
+	}
+.left-col{
+	font-size:20px;
+	color:blue;
+	text-align:center;
+	width:90%;
+	background:#A34;
+	float:center;
+	margin-top:2%;
+	border-radius:10px;
+	}
+footer{
+	font-weight:bold;
+	margin-left:85px;
+	margin-top:5px;
+	margin-right:85px;
+	color: red;
+	border-radius:10px;
+	text-align: center;
+	margin-bottom:0px;
+	background-color:#099;
+	}
+</style>
+<script type="text/javascript" >
+function show(shown, hidden) {
+  document.getElementById(shown).style.display='block';
+  document.getElementById(hidden).style.display='none';
+  return false;
+}
+function area(ish)
+{
+	t1=parseFloat(ish.t1.value);
+	t2=parseFloat(ish.t2.value);
+	t3=parseFloat(ish.t3.value);
+	if(ish.t1.value=="")
+		{
+			ish.t1.value="Enter the sides 1";
+		}
+	else if(ish.t2.value=="")
+		{
+			ish.t2.value="Enter the sides 2";
+		}
+	else if(ish.t3.value=="")
+		{
+			ish.t3.value="Enter the sides 3";
+		}
+	else 
+		if(((t1+t2) <= t3) ||((t2+t3)<= t1 )||( (t1+t3)<=t2))
+		{ 
+			ish.t4.value="Invalid Triangle!";
+		}
+		
+			else
+			{		
+				var s=(t1+t2+t3)/2;
+				ish.t4.value= Math.sqrt(s*(s-t1)*(s-t2)*(s-t3));
+			}
+}
+
+function clear1(ish)
+		{	if(ish.t1.value!=parseFloat(ish.t1.value)){
+			ish.t1.value="";
+			}
+		}
+function clear2(ish){
+			if(ish.t2.value!=parseFloat(ish.t2.value)){
+			ish.t2.value="";
+			}
+			}
+function clear3(ish){
+			if(ish.t3.value!=parseFloat(ish.t3.value)){
+			ish.t3.value="";
+			}
+			}
+
+function compute(ish1){
+	if(ish1.t5.value=="")
+		{
+			ish1.t5.value="Enter the Area";
+		}
+		
+		else {
+			T5=parseFloat(ish1.t5.value);
+			ish1.t6.value=(T5)/272;
+			}
+}
+function clear4(ish1){
+			if(ish1.t5.value!=parseFloat(ish1.t5.value)){
+			ish1.t5.value="";
+			}
+			}
+
+function convert(ish1){
+		T6=parseInt(ish1.t6.value);
+		ish1.t8.value=(T6)%20;
+		T7=T6-parseFloat(ish1.t8.value);
+		ish1.t7.value=T7/20;
+		T8=parseFloat(ish1.t6.value)-parseInt(ish1.t6.value);
+		ish1.t9.value=Math.round(T8*272)
+
+}
+		
+function showHide(id,cl) {
+var myclass = new RegExp('\\b'+cl+'\\b');
+var elem = document.getElementsByTagName('body')[0].getElementsByTagName('*');
+for (var i = 0; i < elem.length; i++) {
+var classes = elem[i].className;
+if (myclass.test(classes)) elem[i].style.display = 'none' ;
+}
+if (id) document.getElementById(id).style.display = 'block';
+}
+window.onload = function() {showHide('a1','one');}
+//--></script>
+	</head>
+
+<center><body >
+	<div id="wrapper">
+	<div>
+		<input type="button" style="cursor:pointer" class="but4"  onclick="showHide('a1','one')" value="AREA"/>
+	<input type="button" style="cursor:pointer" class="but4" onclick="showHide('a2','one')" value="CONVERT"/>
+	</div>
+	<div id="a1" class="red one">
+	  <form name="ish">
+			<table ><tr>
+			<td>Side1:</td><td><input class="text1" type="text"  name="t1" value="Enter Side 1" onclick="clear1(ish);"/><tr>
+			<td>Side2:</td><td><input class="text1" type="text" name="t2" value="Enter Side 2" onclick="clear2(ish);"/></><tr>
+			<td>Side3:</td><td><input class="text1" type="text" name="t3" value="Enter Side 3" onclick="clear3(ish);"/></><tr>
+			<td><input class="but2" style="cursor:pointer" type="reset" value="Reset"/></td>
+			<td><input class="but1" style="cursor:pointer" type="button" value=" Calculate " onclick="area(ish);"/><tr>
+			<td>Area :</td><td><output name="t4" ></output></td></tr>
+			</table>
+		</form>
+	   </div>
+	   <div id="a2" class="one">
+	   <form name="ish1">
+			<table ><tr>
+			<td>Area :</td><td><input class="text1" type="text" name="t5" value="Enter Area"onclick="clear4(ish1);"/></td><tr>
+			<td><input class="but2" style="cursor:pointer" type="reset" value="Reset"/></td>
+			<td><input class="but1" style="cursor:pointer" type="button" value=" Compute " onclick="compute(ish1);"/><tr>
+			<td>Marls:</td><td><input type=text class="text1" name="t6" ></output></td></tr>
+			<td colspan="2"><center><input class="but3" type="button" style="cursor:pointer" value=" Calculate " onclick="convert(ish1);"/><center><tr>
+			<td>Knals:</td><td><output name="t7" ></output></td></tr>
+			<td>Marls:</td><td><output name="t8" ></output></td></tr>
+			<td>Feets:</td><td><output name="t9" ></output></td></tr>
+			</table>
+		</form>
+	   </div>
+	<div class="clear"></div>
+	<footer><center>©Calculator<center></footer>
+	</div>
+	
+	
+</body>
+</html>
+
